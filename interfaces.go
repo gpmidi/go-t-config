@@ -4,16 +4,16 @@ import ()
 
 // Main config
 type TConfigI interface {
-	// Getters
-	GetString(sub string, key string) (string, error)
-	GetBool(sub string, key string) (bool, error)
-	GetInt64(sub string, key string) (int64, error)
-	GetFloat64(sub string, key string) (float64, error)
-	// Setters
-	SetString(sub string, key string, value string) (error)
-	SetBool(sub string, key string, value bool) (error)
-	SetInt64(sub string, key string, value int64) (error)
-	SetFloat64(sub string, key string, value float64) (error)
+	//// Getters
+	//GetString(sub string, key string) (string, error)
+	//GetBool(sub string, key string) (bool, error)
+	//GetInt64(sub string, key string) (int64, error)
+	//GetFloat64(sub string, key string) (float64, error)
+	//// Setters
+	//SetString(sub string, key string, value string) (error)
+	//SetBool(sub string, key string, value bool) (error)
+	//SetInt64(sub string, key string, value int64) (error)
+	//SetFloat64(sub string, key string, value float64) (error)
 	// Default params to use for lookups
 	SetDefaultWriteSub(sub string)
 	// Logging
@@ -39,8 +39,8 @@ type SubConfigI interface {
 	// Related
 	GetParent() *SubConfigI
 	SetParent(parent *SubConfigI)
-	GetChild(key string) *SubConfigI
-	SetChild(key string, child *SubConfigI)
+	GetChild(key string) (*SubConfigI, error)
+	SetChild(key string, child *SubConfigI) error
 	// Get our relative name
 	GetName() string
 

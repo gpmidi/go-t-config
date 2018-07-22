@@ -2,9 +2,16 @@ package go_t_config
 
 import "testing"
 
-func TestSum(t *testing.T) {
-	total := Sum(5, 5)
-	if total != 10 {
-		t.Errorf("Sum was incorrect, got: %d, want: %d.", total, 10)
+func getTestingLogger(t *testing.T) (*TLogI, error) {
+
+}
+
+func TestNewTConfig(t *testing.T) {
+	l, err := getTestingLogger(t)
+	if err != nil {
+		t.Error("Got error", err)
 	}
+	var tc *TConfigI
+	tc, err = NewTConfig(l)
+
 }
